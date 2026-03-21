@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kathy Feng — Building AI for Life Sciences</title>
+<title>Kathy Feng — AI for Life Sciences & Healthcare</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -17,7 +17,6 @@
     --text-bright: #1a1a2e;
     --accent: #c4885a;
     --accent-glow: rgba(196,136,90,0.12);
-    --claude: #c4885a;
     --green: #16a34a;
     --blue: #2563eb;
     --purple: #7c3aed;
@@ -87,9 +86,9 @@
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--text-dim);
-    max-width: 650px;
+    max-width: 680px;
     line-height: 1.7;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.6s;
@@ -97,7 +96,7 @@
 
   .hero-tags {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     margin-top: 32px;
     flex-wrap: wrap;
     justify-content: center;
@@ -130,7 +129,7 @@
   }
 
   /* === SECTION HEADERS === */
-  .section { padding: 80px 0; }
+  .section { padding: 60px 0; }
 
   .section-label {
     font-family: 'JetBrains Mono', monospace;
@@ -153,7 +152,7 @@
     font-size: 1.05rem;
     color: var(--text-dim);
     max-width: 600px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   /* === CENTER TIMELINE === */
@@ -163,7 +162,6 @@
     margin: 0 auto;
   }
 
-  /* The vertical center line */
   .timeline-center::before {
     content: '';
     position: absolute;
@@ -171,14 +169,14 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--timeline-line) 5%, var(--timeline-line) 95%, transparent);
+    background: linear-gradient(to bottom, transparent, var(--timeline-line) 3%, var(--timeline-line) 97%, transparent);
     transform: translateX(-50%);
   }
 
   .tl-item {
     position: relative;
     width: 50%;
-    padding: 0 40px 48px;
+    padding: 0 36px 36px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
@@ -189,63 +187,42 @@
     transform: translateY(0);
   }
 
-  /* Left side items */
-  .tl-item.left {
-    left: 0;
-    text-align: right;
-  }
+  .tl-item.left { left: 0; text-align: right; }
+  .tl-item.right { left: 50%; text-align: left; }
 
-  /* Right side items */
-  .tl-item.right {
-    left: 50%;
-    text-align: left;
-  }
-
-  /* The dot on the center line */
   .tl-item::before {
     content: '';
     position: absolute;
-    top: 28px;
-    width: 12px;
-    height: 12px;
+    top: 24px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--bg);
     border: 3px solid var(--timeline-dot);
-    box-shadow: 0 0 12px var(--accent-glow);
+    box-shadow: 0 0 10px var(--accent-glow);
     z-index: 2;
   }
 
-  .tl-item.left::before {
-    right: -6px;
-  }
+  .tl-item.left::before { right: -5px; }
+  .tl-item.right::before { left: -5px; }
 
-  .tl-item.right::before {
-    left: -6px;
-  }
-
-  /* Connector line from dot to card */
   .tl-item::after {
     content: '';
     position: absolute;
-    top: 33px;
-    width: 28px;
+    top: 28px;
+    width: 24px;
     height: 1px;
     background: var(--timeline-line);
   }
 
-  .tl-item.left::after {
-    right: 6px;
-  }
-
-  .tl-item.right::after {
-    left: 6px;
-  }
+  .tl-item.left::after { right: 5px; }
+  .tl-item.right::after { left: 5px; }
 
   .tl-year {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--accent);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: 1px;
     font-weight: 500;
   }
@@ -254,7 +231,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 24px;
+    padding: 20px;
     transition: all 0.3s ease;
     text-align: left;
     backdrop-filter: blur(10px);
@@ -263,53 +240,63 @@
   .tl-card:hover {
     background: var(--bg-card-hover);
     border-color: rgba(196,136,90,0.2);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.05);
     transform: translateY(-2px);
   }
 
   .tl-card.featured {
     border-color: rgba(196,136,90,0.35);
-    box-shadow: 0 4px 20px rgba(196,136,90,0.08);
+    box-shadow: 0 4px 16px rgba(196,136,90,0.08);
   }
 
   .tl-card h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-bright);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .tl-card .role {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .tl-card p {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     color: var(--text);
-    line-height: 1.6;
-    margin-bottom: 14px;
+    line-height: 1.55;
+    margin-bottom: 10px;
   }
 
-  .tech-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+  .tl-card .proto-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(124,58,237,0.08);
+    border: 1px solid rgba(124,58,237,0.2);
+    color: var(--purple);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
+
+  .tech-tags { display: flex; gap: 5px; flex-wrap: wrap; }
 
   .tech-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    padding: 3px 10px;
+    font-size: 9px;
+    padding: 2px 8px;
     border-radius: 4px;
     background: rgba(0,0,0,0.03);
     border: 1px solid var(--border);
     color: var(--text-dim);
   }
 
-  .tech-tag.claude {
-    color: var(--claude);
+  .tech-tag.highlight {
+    color: var(--accent);
     border-color: rgba(196,136,90,0.3);
     background: rgba(196,136,90,0.08);
   }
@@ -317,40 +304,40 @@
   .impact {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 4px 12px;
+    font-size: 10px;
+    padding: 3px 10px;
     border-radius: 4px;
     background: rgba(22,163,74,0.08);
     border: 1px solid rgba(22,163,74,0.2);
     color: var(--green);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   /* === STATS === */
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 60px 0;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
   }
 
   .stat-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 28px;
+    padding: 24px;
     text-align: center;
   }
 
   .stat-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-bright);
     letter-spacing: -1px;
   }
 
   .stat-label {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
     margin-top: 4px;
   }
@@ -360,12 +347,12 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 48px;
-    margin: 40px 0;
+    padding: 40px;
+    margin: 30px 0;
   }
 
   .philosophy blockquote {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
     color: var(--text-bright);
     line-height: 1.7;
@@ -375,8 +362,8 @@
   }
 
   .philosophy .attr {
-    margin-top: 16px;
-    font-size: 0.85rem;
+    margin-top: 14px;
+    font-size: 0.82rem;
     color: var(--text-dim);
     padding-left: 26px;
   }
@@ -384,21 +371,21 @@
   /* === CONTACT === */
   .contact-section {
     text-align: center;
-    padding: 120px 0;
+    padding: 100px 0;
   }
 
   .contact-links {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 32px;
+    margin-top: 28px;
   }
 
   .contact-link {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    padding: 12px 24px;
+    font-size: 12px;
+    padding: 10px 20px;
     border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text);
@@ -424,7 +411,6 @@
     box-shadow: 0 0 30px var(--accent-glow);
   }
 
-  /* === FOOTER === */
   footer {
     text-align: center;
     padding: 40px 0;
@@ -433,7 +419,6 @@
     border-top: 1px solid var(--border);
   }
 
-  /* === ANIMATIONS === */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -444,31 +429,14 @@
     50% { opacity: 1; }
   }
 
-  /* === RESPONSIVE === */
   @media (max-width: 768px) {
-    .timeline-center::before {
-      left: 20px;
-    }
-    .tl-item {
-      width: 100%;
-      padding: 0 0 40px 50px;
-      text-align: left;
-    }
-    .tl-item.left, .tl-item.right {
-      left: 0;
-      text-align: left;
-    }
-    .tl-item::before {
-      left: 14px !important;
-      right: auto !important;
-    }
-    .tl-item::after {
-      left: 26px !important;
-      right: auto !important;
-      width: 18px;
-    }
-    .philosophy { padding: 28px; }
-    .philosophy blockquote { font-size: 1.1rem; }
+    .timeline-center::before { left: 20px; }
+    .tl-item { width: 100%; padding: 0 0 32px 50px; text-align: left; }
+    .tl-item.left, .tl-item.right { left: 0; text-align: left; }
+    .tl-item::before { left: 14px !important; right: auto !important; }
+    .tl-item::after { left: 24px !important; right: auto !important; width: 18px; }
+    .philosophy { padding: 24px; }
+    .philosophy blockquote { font-size: 1rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
@@ -481,18 +449,19 @@
 
 <!-- === HERO === -->
 <section class="hero">
-  <div class="hero-label">Life Sciences × AI × Product</div>
+  <div class="hero-label">Life Sciences × AI × Builder</div>
   <h1>Kathy Feng</h1>
   <p class="hero-sub">
-    10+ years in pharma R&D, clinical trials, and healthcare — now building AI tools 
-    that make regulated industries move faster. From Covance/Merck CRA to shipping 
-    products powered by Claude/OpenAI API.
+    10 AI products shipped across drug discovery, clinical trials, and healthcare. 
+    From Covance/Merck CRA to building production agents and ML pipelines 
+    for biotech companies, agrochemical manufacturers, and small clinics.
   </p>
   <div class="hero-tags">
-    <span class="hero-tag">Claude API in Production</span>
+    <span class="hero-tag">AI Agents in Production</span>
+    <span class="hero-tag">1,000-Case Eval Framework</span>
+    <span class="hero-tag">ML + Clinical Data</span>
     <span class="hero-tag">Pharma & Healthcare</span>
     <span class="hero-tag">Brown MPH</span>
-
   </div>
   <div class="scroll-hint"><span></span></div>
 </section>
@@ -501,20 +470,28 @@
 <div class="container">
   <div class="stats-grid">
     <div class="stat-card">
+      <div class="stat-number">10</div>
+      <div class="stat-label">AI Products Shipped</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">1,000</div>
+      <div class="stat-label">Eval Test Cases</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">97</div>
+      <div class="stat-label">Real MDD Trials (ML)</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-number">10+</div>
       <div class="stat-label">Years in Life Sciences</div>
     </div>
     <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Enterprise Prototypes</div>
+    </div>
+    <div class="stat-card">
       <div class="stat-number">200+</div>
       <div class="stat-label">EHR Users (LoyEco)</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">13</div>
-      <div class="stat-label">Blockbuster Drugs Analyzed</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">50+</div>
-      <div class="stat-label">Clinical Site Visits (CRA)</div>
     </div>
   </div>
 </div>
@@ -524,8 +501,9 @@
   <div class="container">
     <div class="section-label" style="text-align:center;">// Journey</div>
     <h2 class="section-title" style="text-align:center;">What I've Built</h2>
-    <p class="section-desc" style="text-align:center; margin: 0 auto 60px;">
-      Every product came from a real problem — as a clinician, researcher, or operator.
+    <p class="section-desc" style="text-align:center; margin: 0 auto 50px;">
+      Every product came from a real problem — as a clinician, researcher, or operator. 
+      Prototypes marked with ◇ were built for specific enterprise clients.
     </p>
 
     <div class="timeline-center">
@@ -537,9 +515,8 @@
           <h3><a href="https://loyeco.net" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">LoyEco</a></h3>
           <div class="role">EHR for Integrative Medicine · Founder</div>
           <p>
-            HIPAA/PIPEDA-compliant EHR for alternative medicine practitioners. 
-            200+ users. Full lifecycle: product vision, engineering, sales, compliance. 
-            Insights from 200+ practitioners directly shaped Cheryl MD.
+            HIPAA/PIPEDA-compliant EHR. 200+ users. Full lifecycle: product vision, engineering, sales, compliance. 
+            Insights from practitioners directly shaped Cheryl MD.
           </p>
           <div class="impact">200+ practitioners</div>
           <div class="tech-tags">
@@ -558,9 +535,8 @@
           <h3><a href="https://seenla.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">Seenla</a></h3>
           <div class="role">AI Engine Optimization · Solo Builder</div>
           <p>
-            Built for my own clinic. Automates Google keyword tracking 
-            and monitors brand visibility across ChatGPT, Perplexity, and Google AI. 
-            Because SEO alone isn't enough when AI answers are eating search traffic.
+            Built for my own clinic. Tracks brand visibility across ChatGPT, Perplexity, and Google AI. 
+            SEO alone isn't enough when AI answers are eating search traffic.
           </p>
           <div class="tech-tags">
             <span class="tech-tag">React</span>
@@ -570,21 +546,39 @@
         </div>
       </div>
 
-      <!-- 3: MolePathway — LEFT -->
+      <!-- 3: SelectGPT — LEFT -->
       <div class="tl-item left">
+        <div class="tl-year">2025</div>
+        <div class="tl-card">
+          <h3><a href="https://chromewebstore.google.com/detail/ai-text-assistant/pjbbhcgpkmdghjgchgaacafofaolmbep" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">SelectGPT</a></h3>
+          <div class="role">AI Text Assistant · <a href="https://github.com/superkf/selectgpt" target="_blank" style="color:var(--accent);">GitHub</a> · Chrome Web Store</div>
+          <p>
+            Published Chrome extension — select text, get AI explanations. 
+            BYOK model: OpenAI, DeepSeek, xAI. One-time purchase, privacy-first.
+          </p>
+          <div class="impact">Published on Chrome Web Store</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Chrome Extension</span>
+            <span class="tech-tag">Multi-LLM API</span>
+            <span class="tech-tag">BYOK</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: MolePathway — RIGHT -->
+      <div class="tl-item right">
         <div class="tl-year">2025</div>
         <div class="tl-card featured">
           <h3><a href="https://molepathway.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">MolePathway</a> ★</h3>
           <div class="role">Claude-Powered Drug Intelligence · With a pharma industry association</div>
           <p>
-            The flagship. Uses Claude API to evaluate generic drug opportunities across 13 blockbuster drugs (Ozempic, Keytruda, Eliquis, etc.) — 
-            analyzing 68 patents for vulnerability, synthesis feasibility, and litigation risk. 
-            Full pipeline: FDA Orange Book → USPTO/EPO → PTAB → Claude evaluation → GO/NO-GO scorecard. 
-            Partner handles BD; I own product and engineering.
+            Evaluates generic drug opportunities across 13 blockbuster drugs — 
+            68 patents analyzed for vulnerability, synthesis feasibility, and litigation risk. 
+            Pipeline: FDA Orange Book → USPTO/EPO → PTAB → Claude → GO/NO-GO scorecard.
           </p>
           <div class="impact">3-6 months → minutes</div>
           <div class="tech-tags">
-            <span class="tech-tag claude">Claude API</span>
+            <span class="tech-tag highlight">Claude API</span>
             <span class="tech-tag">FastAPI</span>
             <span class="tech-tag">RDKit</span>
             <span class="tech-tag">PostgreSQL</span>
@@ -592,44 +586,127 @@
         </div>
       </div>
 
-      <!-- 4: CloudCost — RIGHT -->
-      <div class="tl-item right">
+      <!-- 5: CloudCost — LEFT -->
+      <div class="tl-item left">
         <div class="tl-year">2025</div>
         <div class="tl-card">
           <h3><a href="https://github.com/superkf/cloudcost" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">CloudCost</a></h3>
           <div class="role">Cloud Cost Estimator · Open Source</div>
           <p>
-            Know your cloud bill before you deploy. Scans your codebase, 
-            estimates costs across 25+ services. Published on npm. 
-            Integrates with Claude Code and Cursor via MCP protocol. 100% local.
+            Scans your codebase, estimates cloud costs across 25+ services. 
+            Published on npm. Integrates with Claude Code and Cursor via MCP protocol.
           </p>
           <div class="tech-tags">
             <span class="tech-tag">TypeScript</span>
             <span class="tech-tag">npm</span>
-            <span class="tech-tag claude">MCP Protocol</span>
+            <span class="tech-tag highlight">MCP Protocol</span>
             <span class="tech-tag">Open Source</span>
           </div>
         </div>
       </div>
 
-      <!-- 5: Cheryl MD — LEFT -->
+      <!-- 6: MoleCraft — RIGHT -->
+      <div class="tl-item right">
+        <div class="tl-year">2026</div>
+        <div class="tl-card">
+          <h3><a href="https://molecraft.ai" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">MoleCraft</a></h3>
+          <div class="role">Electronic Lab Notebook</div>
+          <div class="proto-badge">◇ Prototype — publicly-listed agrochemical manufacturer</div>
+          <p>
+            Enterprise ELN for GMP/GLP environments. Batch experiment records, 
+            multi-role access control, regulatory-compliant data export. 
+            Replacing paper-based lab workflows.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">GMP/GLP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: CNS Clinical Trial — LEFT -->
       <div class="tl-item left">
+        <div class="tl-year">2026</div>
+        <div class="tl-card featured">
+          <h3>CNS Endpoint Intelligence ★</h3>
+          <div class="role">Clinical Trial Optimization</div>
+          <div class="proto-badge">◇ Prototype — biotech company</div>
+          <p>
+            AI platform for CNS Phase 3 trial design — endpoint strategy, 
+            site selection, timeline planning. Leverages FDA regulatory data 
+            and real-world clinical insights for MDD studies.
+          </p>
+          <div class="impact">Trial design: weeks → hours</div>
+          <div class="tech-tags">
+            <span class="tech-tag highlight">Claude API</span>
+            <span class="tech-tag">FDA Data</span>
+            <span class="tech-tag">CNS/MDD</span>
+            <span class="tech-tag">React</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8: MDD-Synth — RIGHT -->
+      <div class="tl-item right">
+        <div class="tl-year">2026</div>
+        <div class="tl-card featured">
+          <h3>MDD-Synth ★</h3>
+          <div class="role">ML-Powered Trial Simulation</div>
+          <div class="proto-badge">◇ Prototype — biotech company</div>
+          <p>
+            Monte Carlo simulation engine trained on 97 real MDD trials. 
+            Combines FDA open-source data with hospital real-world data 
+            to optimize endpoints and predict Phase 3 success probability.
+          </p>
+          <div class="impact">97 real trials · ML pipeline</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Monte Carlo</span>
+            <span class="tech-tag">ML</span>
+            <span class="tech-tag">FDA + RWD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9: Pharmunity — LEFT -->
+      <div class="tl-item left">
+        <div class="tl-year">2026</div>
+        <div class="tl-card">
+          <h3><a href="https://pharmunity.io" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">Pharmunity</a></h3>
+          <div class="role">Biotech-Pharma BD Platform · With a pharma industry association</div>
+          <p>
+            B2B platform connecting biotech companies with MNC pharma BD executives for drug licensing deals. 
+            Real-time buyer interest tracking — which companies view your pipeline, 
+            when, and how long. Solving the "black box" in biotech BD.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Supabase</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10: Cheryl MD — RIGHT -->
+      <div class="tl-item right">
         <div class="tl-year">2026 — Present</div>
         <div class="tl-card featured">
           <h3><a href="https://cherylmd.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">Cheryl MD</a> ★</h3>
           <div class="role">AI Clinical Assistant · Founder</div>
           <p>
-            Born from LoyEco's user research. Chrome extension for any web-based EHR — 
-            generates SOAP notes, ICD-10/CPT codes, catches billing gaps 
-            ($57K/year recovery per provider), verifies insurance. All in ~1 minute. 
-            Pre-selling to US market.
+            Chrome extension for any web-based EHR — AI agent that generates SOAP notes, 
+            extracts ICD-10/CPT codes, catches billing gaps ($57K/yr recovery per provider). 
+            1,000-case eval framework with Karpathy-style autoresearch iteration.
           </p>
-          <div class="impact">$57K/yr revenue recovery</div>
+          <div class="impact">$57K/yr recovery · 1,000 evals · 91.2% accuracy</div>
           <div class="tech-tags">
             <span class="tech-tag">OpenAI API</span>
             <span class="tech-tag">Chrome Extension</span>
-            <span class="tech-tag">Any EHR</span>
-            <span class="tech-tag">Billing AI</span>
+            <span class="tech-tag">Agent Architecture</span>
+            <span class="tech-tag">Eval Framework</span>
           </div>
         </div>
       </div>
@@ -646,17 +723,16 @@
 
     <div class="philosophy">
       <blockquote>
-        "The best AI tools for regulated industries don't replace experts — they remove the friction 
-        that stops experts from doing their best work. Explainability, source citations, human-in-the-loop. 
+        "The best AI for regulated industries doesn't replace experts — it removes the friction 
+        that stops them from doing their best work. Explainability, source citations, human-in-the-loop. 
         That's not a limitation. That's the product."
       </blockquote>
-      <div class="attr">— Learned the hard way, building for pharma and healthcare</div>
     </div>
 
-    <div class="philosophy" style="margin-top: 20px;">
+    <div class="philosophy" style="margin-top: 16px;">
       <blockquote>
-        "I don't just understand healthcare AI from the outside. I've been the clinician charting at midnight, 
-        the researcher preparing REB submissions, the CRA managing 50 sites across a country, 
+        "I don't just understand healthcare AI from the outside. I've been the 
+        clinician charting at midnight, the CRA managing 50 sites across a country, 
         and the entrepreneur losing sleep over product-market fit. 
         Every product I build comes from pain I've felt."
       </blockquote>
@@ -696,17 +772,17 @@
   <div class="container">
     <div class="section-label">// Let's Talk</div>
     <h2 class="section-title">Ready to Build What's Next</h2>
-    <p class="section-desc" style="margin: 0 auto 32px;">
+    <p class="section-desc" style="margin: 0 auto 28px;">
       Toronto → Relocating to San Francisco
     </p>
     <div class="contact-links">
       <a href="mailto:fengbo0724@gmail.com" class="contact-link primary">fengbo0724@gmail.com</a>
       <a href="https://linkedin.com/in/kf142857" class="contact-link" target="_blank">LinkedIn</a>
       <a href="https://github.com/superkf" class="contact-link" target="_blank">GitHub</a>
-
-      <a href="https://molepathway.com" class="contact-link" target="_blank">MolePathway</a>
       <a href="https://cherylmd.com" class="contact-link" target="_blank">Cheryl MD</a>
-      <a href="https://seenla.com" class="contact-link" target="_blank">Seenla</a>
+      <a href="https://molepathway.com" class="contact-link" target="_blank">MolePathway</a>
+      <a href="https://molecraft.ai" class="contact-link" target="_blank">MoleCraft</a>
+      <a href="https://pharmunity.io" class="contact-link" target="_blank">Pharmunity</a>
     </div>
   </div>
 </section>
