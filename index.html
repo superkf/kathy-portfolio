@@ -490,8 +490,8 @@
       <div class="stat-label">Enterprise Prototypes</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">200+</div>
-      <div class="stat-label">EHR Users (LoyEco)</div>
+      <div class="stat-number">260+</div>
+      <div class="stat-label">Clinicians (LoyEco)</div>
     </div>
   </div>
 </div>
@@ -513,12 +513,13 @@
         <div class="tl-year">2023 — 2025</div>
         <div class="tl-card">
           <h3><a href="https://loyeco.net" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">LoyEco</a></h3>
-          <div class="role">EHR for Integrative Medicine · Founder</div>
+          <div class="role">EHR for Integrative Medicine · Co-Founder</div>
           <p>
-            HIPAA/PIPEDA-compliant EHR. 200+ users. Full lifecycle: product vision, engineering, sales, compliance. 
-            Insights from practitioners directly shaped Cheryl MD.
+            HIPAA/PIPEDA-compliant EHR. 260+ clinicians across 20+ clinics. Full lifecycle: 
+            clinician interviews, engineering coordination, compliance, GTM, ongoing operations. 
+            Multi-tenant architecture, data migration, production uptime.
           </p>
-          <div class="impact">200+ practitioners</div>
+          <div class="impact">260+ clinicians · 20+ clinics</div>
           <div class="tech-tags">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Node.js</span>
@@ -570,17 +571,22 @@
         <div class="tl-year">2025</div>
         <div class="tl-card featured">
           <h3><a href="https://molepathway.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">MolePathway</a> ★</h3>
-          <div class="role">AI-Powered Drug Intelligence · With a pharma industry association</div>
+          <div class="role">AI Drug Intelligence · For pharmaceutical association</div>
           <p>
-            Evaluates generic drug opportunities across 13 blockbuster drugs — 
-            68 patents analyzed for vulnerability, synthesis feasibility, and litigation risk. 
-            Pipeline: FDA Orange Book → USPTO/EPO → PTAB → AI analysis → GO/NO-GO scorecard.
+            11 integrated data sources (FDA Orange Book, PubChem, Espacenet, PTAB, IBM RXN, 
+            CourtListener, CMS Spending, SureChEMBL). ML systems: patent type classifier, 
+            molecular complexity scoring (RDKit, chemist-calibratable weights), Tanimoto similarity search 
+            (Morgan fingerprints), patent challenge win probability model (8-factor weighted scoring), 
+            LLM vulnerability scorer, and economic ROI model with 180-day exclusivity scenarios. 
+            13 drugs, 68 patents validated.
           </p>
-          <div class="impact">3-6 months → minutes</div>
+          <div class="impact">3-6 months → minutes · 11 data sources · 6 ML models</div>
           <div class="tech-tags">
-            <span class="tech-tag highlight">OpenAI API</span>
+            <span class="tech-tag highlight">ML Pipeline</span>
+            <span class="tech-tag highlight">RDKit</span>
+            <span class="tech-tag">Claude API</span>
             <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">RDKit</span>
+            <span class="tech-tag">Celery</span>
             <span class="tech-tag">PostgreSQL</span>
           </div>
         </div>
@@ -634,14 +640,15 @@
           <div class="role">Clinical Trial Optimization</div>
           <div class="proto-badge">◇ Prototype — biotech company</div>
           <p>
-            AI platform for CNS Phase 3 trial design — endpoint strategy, 
-            site selection, timeline planning. Leverages FDA regulatory data 
-            and real-world clinical insights for MDD studies.
+            50%+ of CNS Phase 3 trials fail from endpoint selection. 
+            AI platform integrating ClinicalTrials.gov data with LLM analysis 
+            for evidence-based endpoint design, site selection, and timeline planning. 
+            Companion to MDD-Synth simulation engine.
           </p>
           <div class="impact">Trial design: weeks → hours</div>
           <div class="tech-tags">
             <span class="tech-tag highlight">Claude API</span>
-            <span class="tech-tag">FDA Data</span>
+            <span class="tech-tag">ClinicalTrials.gov</span>
             <span class="tech-tag">CNS/MDD</span>
             <span class="tech-tag">React</span>
           </div>
@@ -656,15 +663,18 @@
           <div class="role">ML-Powered Trial Simulation</div>
           <div class="proto-badge">◇ Prototype — biotech company</div>
           <p>
-            Monte Carlo simulation engine trained on 97 real MDD trials. 
-            Combines FDA open-source data with hospital real-world data 
-            to optimize endpoints and predict Phase 3 success probability.
+            Monte Carlo trial simulator trained on 97 validated real MDD trials 
+            (effect sizes 0.08-1.08). Generates synthetic patient trajectories using 
+            Gaussian Copula models (SDV). 4 evaluation tools: trial power simulation, 
+            enrichment optimization, sample size calculator, timepoint optimization. 
+            Turns endpoint selection from intuition into data.
           </p>
-          <div class="impact">97 real trials · ML pipeline</div>
+          <div class="impact">97 real trials · Gaussian Copula · 4 eval tools</div>
           <div class="tech-tags">
+            <span class="tech-tag highlight">Monte Carlo</span>
+            <span class="tech-tag highlight">Gaussian Copula</span>
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">Monte Carlo</span>
-            <span class="tech-tag">ML</span>
+            <span class="tech-tag">SDV</span>
             <span class="tech-tag">FDA + RWD</span>
           </div>
         </div>
@@ -695,17 +705,21 @@
         <div class="tl-year">2026 — Present</div>
         <div class="tl-card featured">
           <h3><a href="https://cherylmd.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--accent);">Cheryl MD</a> ★</h3>
-          <div class="role">AI Clinical Assistant · Founder</div>
+          <div class="role">Clinical Intelligence System · Founder</div>
           <p>
-            Chrome extension for any web-based EHR — AI agent that generates SOAP notes, 
-            extracts ICD-10/CPT codes, catches billing gaps ($57K/yr recovery per provider). 
+            Chrome extension that injects AI into any web-based EHR. Not an LLM wrapper — 
+            a clinical intelligence system: 3-layer medical code engine (rules → fuzzy matching → LLM, 
+            covering SNOMED/LOINC/RxNorm/ICD-10), denial prediction model (weighted scoring on CMS patterns), 
+            self-evolving error memory (learns from physician corrections, auto-promotes to rules), 
+            and MDM scoring engine (2021 AMA/CMS guidelines, overcoding detection).
             1,000-case eval framework with Karpathy-style autoresearch iteration.
           </p>
           <div class="impact">$57K/yr recovery · 1,000 evals · 91.2% accuracy</div>
           <div class="tech-tags">
+            <span class="tech-tag highlight">ML Pipeline</span>
             <span class="tech-tag">OpenAI API</span>
             <span class="tech-tag">Chrome Extension</span>
-            <span class="tech-tag">Agent Architecture</span>
+            <span class="tech-tag">SNOMED/LOINC/ICD-10</span>
             <span class="tech-tag">Eval Framework</span>
           </div>
         </div>
